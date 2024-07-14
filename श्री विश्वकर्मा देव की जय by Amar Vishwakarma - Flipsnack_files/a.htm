@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US" style="--player-width: 1536px; --player-height: 731px;"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex, follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+        <meta name="description" content="Flipsnack player">
+        <!--
+          manifest.json provides metadata used when your web app is installed on a
+          user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+        -->
+        <title>श्री विश्वकर्मा देव की जय</title>
+        <style>
+            @font-face {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url("https://d1fpu6k62r548q.cloudfront.net/css/fonts/Roboto-Regular.ttf") format('truetype');
+            }
+            @font-face {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url("https://d1fpu6k62r548q.cloudfront.net/css/fonts/Roboto-Medium.ttf") format('truetype');
+            }
+            @font-face {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url("https://d1fpu6k62r548q.cloudfront.net/css/fonts/Roboto-Bold.ttf") format('truetype');
+            }
+            #loader-container {
+                background: #000;
+                display: flex;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+
+            .loader,
+            .loader:before,
+            .loader:after {
+                background: #fff;
+                animation: load1 1s infinite ease-in-out;
+                width: 1em;
+                height: 4em;
+            }
+
+            .loader {
+                align-self: center;
+                color: #fff;
+                margin: 0 auto;
+                position: relative;
+                font-size: 6px;
+                transform: translateZ(0);
+                animation-delay: -0.16s;
+            }
+
+            .loader:before,
+            .loader:after {
+                position: absolute;
+                top: 0;
+                content: '';
+            }
+
+            .loader:before {
+                left: -2em;
+                animation-delay: -0.32s;
+            }
+
+            .loader:after {
+                left: 2em;
+            }
+
+            @keyframes load1 {
+               0%,
+               80%,
+               100% {
+                   transform: scaleY(0.8);
+               }
+
+               40% {
+                   transform: scaleY(1.2);
+               }
+            }
+        </style>
+        <!--  Reset Style  -->
+        <style>
+            :root {
+                --player-width: 100%;
+                --player-height: 100%;
+            }
+
+            html {
+                margin: 0;
+                padding: 0;
+                width: var(--player-width);
+                height: var(--player-height);
+                display: flex;
+                overflow: hidden;
+            }
+
+            #root {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                overflow: hidden;
+            }
+
+            #root > div {
+                height: 100%;
+                width: 100%;
+            }
+
+            * {
+                box-sizing: border-box;
+                user-select: none;
+            }
+
+            * {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: antialiased;
+            }
+
+            * {
+                scrollbar-width: thin;
+            }
+
+            *:before, *:after {
+                box-sizing: border-box;
+            }
+
+            input:not([type='checkbox']):focus {
+                outline: none;
+            }
+
+            body, html {
+                -webkit-text-size-adjust: none;
+            }
+
+            body {
+                overscroll-behavior-y: contain;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-size: 14px;
+                line-height: 1.28;
+                margin: 0;
+                overflow-y: hidden;
+                height: 100%;
+                width: 100%;
+                display: flex;
+            }
+
+            input, textarea {
+                user-select: text ;
+            }
+
+            ::-webkit-scrollbar {
+                width: 13px;
+                height: 13px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: transparent;
+                border-radius: 6px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                border-radius: 6px;
+                background-color: rgba(0, 0, 0, 0.2);
+                background-clip: padding-box;
+                border: 3px solid transparent;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+        </style>
+    <style>.image-gallery-icon{color:#fff;transition:all .3s ease-out;appearance:none;background-color:transparent;border:0;cursor:pointer;outline:none;position:absolute;z-index:4;filter:drop-shadow(0 2px 2px #1a1a1a)}@media(hover: hover)and (pointer: fine){.image-gallery-icon:hover{color:#337ab7}.image-gallery-icon:hover .image-gallery-svg{transform:scale(1.1)}}.image-gallery-icon:focus{outline:2px solid #337ab7}.image-gallery-using-mouse .image-gallery-icon:focus{outline:none}.image-gallery-fullscreen-button,.image-gallery-play-button{bottom:0;padding:20px}.image-gallery-fullscreen-button .image-gallery-svg,.image-gallery-play-button .image-gallery-svg{height:28px;width:28px}@media(max-width: 768px){.image-gallery-fullscreen-button,.image-gallery-play-button{padding:15px}.image-gallery-fullscreen-button .image-gallery-svg,.image-gallery-play-button .image-gallery-svg{height:24px;width:24px}}@media(max-width: 480px){.image-gallery-fullscreen-button,.image-gallery-play-button{padding:10px}.image-gallery-fullscreen-button .image-gallery-svg,.image-gallery-play-button .image-gallery-svg{height:16px;width:16px}}.image-gallery-fullscreen-button{right:0}.image-gallery-play-button{left:0}.image-gallery-left-nav,.image-gallery-right-nav{padding:50px 10px;top:50%;transform:translateY(-50%)}.image-gallery-left-nav .image-gallery-svg,.image-gallery-right-nav .image-gallery-svg{height:120px;width:60px}@media(max-width: 768px){.image-gallery-left-nav .image-gallery-svg,.image-gallery-right-nav .image-gallery-svg{height:72px;width:36px}}@media(max-width: 480px){.image-gallery-left-nav .image-gallery-svg,.image-gallery-right-nav .image-gallery-svg{height:48px;width:24px}}.image-gallery-left-nav[disabled],.image-gallery-right-nav[disabled]{cursor:disabled;opacity:.6;pointer-events:none}.image-gallery-left-nav{left:0}.image-gallery-right-nav{right:0}.image-gallery{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);position:relative}.image-gallery.fullscreen-modal{background:#000;bottom:0;height:100%;left:0;position:fixed;right:0;top:0;width:100%;z-index:5}.image-gallery.fullscreen-modal .image-gallery-content{top:50%;transform:translateY(-50%)}.image-gallery-content{position:relative;line-height:0;top:0}.image-gallery-content.fullscreen{background:#000}.image-gallery-content .image-gallery-slide .image-gallery-image{max-height:calc(100vh - 80px)}.image-gallery-content.image-gallery-thumbnails-left .image-gallery-slide .image-gallery-image,.image-gallery-content.image-gallery-thumbnails-right .image-gallery-slide .image-gallery-image{max-height:100vh}.image-gallery-slide-wrapper{position:relative}.image-gallery-slide-wrapper.image-gallery-thumbnails-left,.image-gallery-slide-wrapper.image-gallery-thumbnails-right{display:inline-block;width:calc(100% - 110px)}@media(max-width: 768px){.image-gallery-slide-wrapper.image-gallery-thumbnails-left,.image-gallery-slide-wrapper.image-gallery-thumbnails-right{width:calc(100% - 87px)}}.image-gallery-slide-wrapper.image-gallery-rtl{direction:rtl}.image-gallery-slides{line-height:0;overflow:hidden;position:relative;white-space:nowrap;text-align:center}.image-gallery-slide{left:0;position:absolute;top:0;width:100%}.image-gallery-slide.image-gallery-center{position:relative}.image-gallery-slide .image-gallery-image{width:100%;object-fit:contain}.image-gallery-slide .image-gallery-description{background:rgba(0,0,0,.4);bottom:70px;color:#fff;left:0;line-height:1;padding:10px 20px;position:absolute;white-space:normal}@media(max-width: 768px){.image-gallery-slide .image-gallery-description{bottom:45px;font-size:.8em;padding:8px 15px}}.image-gallery-bullets{bottom:20px;left:0;margin:0 auto;position:absolute;right:0;width:80%;z-index:4}.image-gallery-bullets .image-gallery-bullets-container{margin:0;padding:0;text-align:center}.image-gallery-bullets .image-gallery-bullet{appearance:none;background-color:transparent;border:1px solid #fff;border-radius:50%;box-shadow:0 2px 2px #1a1a1a;cursor:pointer;display:inline-block;margin:0 5px;outline:none;padding:5px;transition:all .2s ease-out}@media(max-width: 768px){.image-gallery-bullets .image-gallery-bullet{margin:0 3px;padding:3px}}@media(max-width: 480px){.image-gallery-bullets .image-gallery-bullet{padding:2.7px}}.image-gallery-bullets .image-gallery-bullet:focus{transform:scale(1.2);background:#337ab7;border:1px solid #337ab7}.image-gallery-bullets .image-gallery-bullet.active{transform:scale(1.2);border:1px solid #fff;background:#fff}@media(hover: hover)and (pointer: fine){.image-gallery-bullets .image-gallery-bullet:hover{background:#337ab7;border:1px solid #337ab7}.image-gallery-bullets .image-gallery-bullet.active:hover{background:#337ab7}}.image-gallery-thumbnails-wrapper{position:relative}.image-gallery-thumbnails-wrapper.thumbnails-swipe-horizontal{touch-action:pan-y}.image-gallery-thumbnails-wrapper.thumbnails-swipe-vertical{touch-action:pan-x}.image-gallery-thumbnails-wrapper.thumbnails-wrapper-rtl{direction:rtl}.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-left,.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-right{display:inline-block;vertical-align:top;width:100px}@media(max-width: 768px){.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-left,.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-right{width:81px}}.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-left .image-gallery-thumbnails,.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-right .image-gallery-thumbnails{height:100%;width:100%;left:0;padding:0;position:absolute;top:0}.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-left .image-gallery-thumbnails .image-gallery-thumbnail,.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-right .image-gallery-thumbnails .image-gallery-thumbnail{display:block;margin-right:0;padding:0}.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-left .image-gallery-thumbnails .image-gallery-thumbnail+.image-gallery-thumbnail,.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-right .image-gallery-thumbnails .image-gallery-thumbnail+.image-gallery-thumbnail{margin-left:0;margin-top:2px}.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-left,.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-right{margin:0 5px}@media(max-width: 768px){.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-left,.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-right{margin:0 3px}}.image-gallery-thumbnails{overflow:hidden;padding:5px 0}@media(max-width: 768px){.image-gallery-thumbnails{padding:3px 0}}.image-gallery-thumbnails .image-gallery-thumbnails-container{cursor:pointer;text-align:center;white-space:nowrap}.image-gallery-thumbnail{display:inline-block;border:4px solid transparent;transition:border .3s ease-out;width:100px;background:transparent;padding:0}@media(max-width: 768px){.image-gallery-thumbnail{border:3px solid transparent;width:81px}}.image-gallery-thumbnail+.image-gallery-thumbnail{margin-left:2px}.image-gallery-thumbnail .image-gallery-thumbnail-inner{display:block;position:relative}.image-gallery-thumbnail .image-gallery-thumbnail-image{vertical-align:middle;width:100%;line-height:0}.image-gallery-thumbnail.active,.image-gallery-thumbnail:focus{outline:none;border:4px solid #337ab7}@media(max-width: 768px){.image-gallery-thumbnail.active,.image-gallery-thumbnail:focus{border:3px solid #337ab7}}@media(hover: hover)and (pointer: fine){.image-gallery-thumbnail:hover{outline:none;border:4px solid #337ab7}}@media(hover: hover)and (pointer: fine)and (max-width: 768px){.image-gallery-thumbnail:hover{border:3px solid #337ab7}}.image-gallery-thumbnail-label{box-sizing:border-box;color:#fff;font-size:1em;left:0;line-height:1em;padding:5%;position:absolute;top:50%;text-shadow:0 2px 2px #1a1a1a;transform:translateY(-50%);white-space:normal;width:100%}@media(max-width: 768px){.image-gallery-thumbnail-label{font-size:.8em;line-height:.8em}}.image-gallery-index{background:rgba(0,0,0,.4);color:#fff;line-height:1;padding:10px 20px;position:absolute;right:0;top:0;z-index:4}@media(max-width: 768px){.image-gallery-index{font-size:.8em;padding:5px 10px}}
+</style><style data-styled="active" data-styled-version="5.3.1"></style></head>
+    <body data-new-gr-c-s-check-loaded="8.912.0" data-gr-ext-installed="">
+    
+     <script type="text/javascript">
+            var itd = (new URLSearchParams(window.location.search)).has('itd');
+            window.cloudfrontBase = "https://d1dhn91mufybwl.cloudfront.net";
+            window.cloudfrontContentBase = "https://d160aj0mj3npgx.cloudfront.net";
+            window.cloudfrontStaticBase = "https://d1fpu6k62r548q.cloudfront.net";
+            window.gaCode = "";
+            window.gaTracking = "true";
+            window.statisticsEndpoint = "https://sqs.us-east-1.amazonaws.com/756737886395/flip-sts";
+            window.leadFormEndpoint = "https://sqs.us-east-1.amazonaws.com/756737886395/flip-widget-queue";
+            window.siteBase = "https://www.flipsnack.com";
+            window.appUrl = "https://app.flipsnack.com";
+            window.enableWatermark = "false";
+            window.enableCollectStats = itd ? "false" : "true";
+            window.downloadMode = "false";
+            window.exportName = "";
+            window.orderEmailEndpoint = "https://sqs.us-east-1.amazonaws.com/756737886395/flip-order-email";
+            window.recaptchaListKey = "6LceL0ghAAAAAIsQS9otnJ5paOB-2Qv85CF_18D0";
+            window.engagementStatsEndpoint = "https://sqs.us-east-1.amazonaws.com/756737886395/flip-engagement-stats";
+            window.cloudfrontPrivate = "https://d3u72tnj701eui.cloudfront.net";
+            window.signatureFetchUrl = "https://content-private.flipsnack.com/authorization";
+            window.signatureInterval = "50000";
+            window.env = "production";
+     </script>
+        <div id="root"><div style="width: 100%;"><div class="Statistics__EventTrackingDiv-sc-1fv5sjr-0 iSLofa"><div class="NativeActionsContainer__NativeActionsContainerDiv-sc-1jf710u-0 kHZoxu"><div class="Fullscreen__FullscreenDiv-sc-1ke9m5y-0 bQbfqQ"><div class="MouseOverPlayerProviderstyles__MouseOverPlayerListener-sc-b5b4dm-0 eIaxMr"><main class="PlayerContainerstyles__PlayerContainer-sc-htdim7-0 iTvdwG"><div class="HeaderContainerStyles__PlayerHeaderContainer-sc-1yovtdi-0 dqUabb"><div class="HeaderContainerStyles__LogoAndWatermarkContainer-sc-1yovtdi-1 fXWUgK"></div></div><nav class="ControllerBarStyles__NavigationBar-sc-nq42hz-2 jvNINq"><div class="ControllerBarStyles__ThumbSliderContainer-sc-nq42hz-3 bUlkYe"><div class="ControllerBarStyles__ThumbSlider-sc-nq42hz-4 fGVdKo"><div class="Sliderstyles__TrackHitArea-sc-urgkj0-1 dTBkno"><div id="slider-track" class="Sliderstyles__Track-sc-urgkj0-0 lbjNsP"><div class="Sliderstyles__TrackProgress-sc-urgkj0-2 cfrA-dL" style="width: 100%;"><div class="Sliderstyles__Thumb-sc-urgkj0-3 erYbtp"></div></div></div></div></div></div><div class="ControllerBarStyles__ControllerBar-sc-nq42hz-0 cWhTbN"><div class="ControllerBarStyles__PageNumberingAndBackgroundAudio-sc-nq42hz-5 jOxQAp"><div class="ControllerBarStyles__Wrapper-sc-nq42hz-6 ControllerBarStyles__PageNumberWrapper-sc-nq42hz-8 jYCuwX gsgePZ"><div role="img" tabindex="0" aria-label="Page 2 of 2" class="PageNumbersstyles__PageNumber-sc-xg3u78-0 dMRvaO">2 / 2</div></div></div><div class="ControllerBarStyles__ControlsContainer-sc-nq42hz-1 cBBVhI"><div role="presentation" class="ZoomBarStyles__ZoomBar-sc-p2w9ce-1 fZBavm"><div class="ControlsTooltipContainerstyles__StaticTooltipContainer-sc-116izd2-0 cKsQZi"><button role="" aria-label="Zoom out" tabindex="0" type="button" class="IconButtonStyles__IconButton-sc-1w5hdle-1 jRKVYy"><span aria-hidden="true" class="IconButtonStyles__IconButtonContent-sc-1w5hdle-0 cOCCIp"><span class="ControllerBarStyles__Icon-sc-nq42hz-9 kEAfiT"><svg width="100%" height="100%" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"><rect x="1" y="9" width="18" height="2" rx="1" fill-rule="evenodd"></rect></svg></span></span></button></div><div class="ControllerBarStyles__SliderWrapper-sc-nq42hz-7 jvXgzv"><div class="ZoomBarStyles__ZoomSlider-sc-p2w9ce-0 fMkswe"><div class="Sliderstyles__TrackHitArea-sc-urgkj0-1 dTBkno"><div id="slider-track" class="Sliderstyles__Track-sc-urgkj0-0 lbjNsP"><div class="Sliderstyles__TrackProgress-sc-urgkj0-2 cfrA-dL" style="width: 0%;"><div class="Sliderstyles__Thumb-sc-urgkj0-3 erYbtp"></div></div></div></div></div></div><div class="ControlsTooltipContainerstyles__StaticTooltipContainer-sc-116izd2-0 cKsQZi"><button role="" aria-label="Zoom in" tabindex="0" type="button" class="IconButtonStyles__IconButton-sc-1w5hdle-1 jRKVYy"><span aria-hidden="true" class="IconButtonStyles__IconButtonContent-sc-1w5hdle-0 cOCCIp"><span class="ControllerBarStyles__Icon-sc-nq42hz-9 kEAfiT"><svg width="100%" height="100%" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"><path d="M10 1c.5522847 0 1 .44771525 1 1v7h7c.5522847 0 1 .44771525 1 1 0 .5522847-.4477153 1-1 1h-7.001L11 18c0 .5522847-.4477153 1-1 1-.55228475 0-1-.4477153-1-1l-.001-7H2c-.55228475 0-1-.4477153-1-1 0-.55228475.44771525-1 1-1h7V2c0-.55228475.44771525-1 1-1z" fill-rule="evenodd"></path></svg></span></span></button></div></div><div class="ControllerBarButtonsstyles__ControllerBarButtonsContainer-sc-aoagyf-0 JcTfx"><div class="ControlsTooltipContainerstyles__StaticTooltipContainer-sc-116izd2-0 cKsQZi"><button role="" aria-label="Pages" tabindex="0" type="button" class="IconButtonStyles__IconButton-sc-1w5hdle-1 jRKVYy"><span aria-hidden="true" class="IconButtonStyles__IconButtonContent-sc-1w5hdle-0 cOCCIp"><span class="ControllerBarStyles__Icon-sc-nq42hz-9 kEAfiT"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 26 26" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 3C1 1.89543 1.89543 1 3 1H10C11.1046 1 12 1.89543 12 3V10C12 11.1046 11.1046 12 10 12H3C1.89543 12 1 11.1046 1 10V3ZM10 3H3V10H10V3Z" fill="white"></path><path d="M3 0.5C1.61929 0.5 0.5 1.61929 0.5 3V10C0.5 11.3807 1.61929 12.5 3 12.5H10C11.3807 12.5 12.5 11.3807 12.5 10V3C12.5 1.61929 11.3807 0.5 10 0.5H3ZM3.5 9.5V3.5H9.5V9.5H3.5Z" stroke="black" stroke-opacity="0.2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M1 16C1 14.8954 1.89543 14 3 14H10C11.1046 14 12 14.8954 12 16V23C12 24.1046 11.1046 25 10 25H3C1.89543 25 1 24.1046 1 23V16ZM10 16H3V23H10V16Z" fill="white"></path><path d="M3 13.5C1.61929 13.5 0.5 14.6193 0.5 16V23C0.5 24.3807 1.61929 25.5 3 25.5H10C11.3807 25.5 12.5 24.3807 12.5 23V16C12.5 14.6193 11.3807 13.5 10 13.5H3ZM3.5 22.5V16.5H9.5V22.5H3.5Z" stroke="black" stroke-opacity="0.2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14 3C14 1.89543 14.8954 1 16 1H23C24.1046 1 25 1.89543 25 3V10C25 11.1046 24.1046 12 23 12H16C14.8954 12 14 11.1046 14 10V3ZM23 3H16V10H23V3Z" fill="white"></path><path d="M16 0.5C14.6193 0.5 13.5 1.61929 13.5 3V10C13.5 11.3807 14.6193 12.5 16 12.5H23C24.3807 12.5 25.5 11.3807 25.5 10V3C25.5 1.61929 24.3807 0.5 23 0.5H16ZM16.5 9.5V3.5H22.5V9.5H16.5Z" stroke="black" stroke-opacity="0.2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14 16C14 14.8954 14.8954 14 16 14H23C24.1046 14 25 14.8954 25 16V23C25 24.1046 24.1046 25 23 25H16C14.8954 25 14 24.1046 14 23V16ZM23 16H16V23H23V16Z" fill="white"></path><path d="M16 13.5C14.6193 13.5 13.5 14.6193 13.5 16V23C13.5 24.3807 14.6193 25.5 16 25.5H23C24.3807 25.5 25.5 24.3807 25.5 23V16C25.5 14.6193 24.3807 13.5 23 13.5H16ZM16.5 22.5V16.5H22.5V22.5H16.5Z" stroke="black" stroke-opacity="0.2"></path></svg></span></span></button></div><div class="ControlsTooltipContainerstyles__StaticTooltipContainer-sc-116izd2-0 cKsQZi"><button role="" aria-label="Share" tabindex="0" type="button" class="IconButtonStyles__IconButton-sc-1w5hdle-1 jRKVYy"><span aria-hidden="true" class="IconButtonStyles__IconButtonContent-sc-1w5hdle-0 cOCCIp"><span class="ControllerBarStyles__Icon-sc-nq42hz-9 kEAfiT"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 26 26" fill="none"><mask id="path-1-outside-1_1682_5275" maskUnits="userSpaceOnUse" x="-9.91821e-05" y="0" width="27" height="26" fill="black"><rect fill="#FFFFFF" x="-9.91821e-05" width="27" height="26"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M21.0001 7C22.1047 7 23.0001 6.10457 23.0001 5C23.0001 3.89543 22.1047 3 21.0001 3C19.8955 3 19.0001 3.89543 19.0001 5C19.0001 6.10457 19.8955 7 21.0001 7ZM21.0001 9C23.2092 9 25.0001 7.20914 25.0001 5C25.0001 2.79086 23.2092 1 21.0001 1C18.791 1 17.0001 2.79086 17.0001 5C17.0001 5.22784 17.0191 5.45124 17.0557 5.66867L10.2797 10.4133C9.40351 8.96673 7.8146 7.99998 5.9999 7.99998C3.23848 7.99998 0.999901 10.2386 0.999901 13C0.999901 15.7614 3.23848 18 5.9999 18C7.83004 18 9.43053 17.0167 10.3019 15.5496L17.0639 20.2844C17.022 20.5166 17.0001 20.7557 17.0001 21C17.0001 23.2091 18.791 25 21.0001 25C23.2092 25 25.0001 23.2091 25.0001 21C25.0001 18.7908 23.2092 17 21.0001 17C19.7627 17 18.6566 17.5618 17.9228 18.4443L10.9673 13.574C10.9888 13.3856 10.9999 13.1941 10.9999 13C10.9999 12.7892 10.9869 12.5814 10.9615 12.3774L17.8954 7.52228C18.6288 8.42396 19.7472 9 21.0001 9ZM5.9999 16C7.65675 16 8.9999 14.6568 8.9999 13C8.9999 11.3431 7.65675 9.99998 5.9999 9.99998C4.34305 9.99998 2.9999 11.3431 2.9999 13C2.9999 14.6568 4.34305 16 5.9999 16ZM23.0001 21C23.0001 22.1045 22.1047 23 21.0001 23C19.8955 23 19.0001 22.1045 19.0001 21C19.0001 19.8954 19.8955 19 21.0001 19C22.1047 19 23.0001 19.8954 23.0001 21Z"></path></mask><path fill-rule="evenodd" clip-rule="evenodd" d="M21.0001 7C22.1047 7 23.0001 6.10457 23.0001 5C23.0001 3.89543 22.1047 3 21.0001 3C19.8955 3 19.0001 3.89543 19.0001 5C19.0001 6.10457 19.8955 7 21.0001 7ZM21.0001 9C23.2092 9 25.0001 7.20914 25.0001 5C25.0001 2.79086 23.2092 1 21.0001 1C18.791 1 17.0001 2.79086 17.0001 5C17.0001 5.22784 17.0191 5.45124 17.0557 5.66867L10.2797 10.4133C9.40351 8.96673 7.8146 7.99998 5.9999 7.99998C3.23848 7.99998 0.999901 10.2386 0.999901 13C0.999901 15.7614 3.23848 18 5.9999 18C7.83004 18 9.43053 17.0167 10.3019 15.5496L17.0639 20.2844C17.022 20.5166 17.0001 20.7557 17.0001 21C17.0001 23.2091 18.791 25 21.0001 25C23.2092 25 25.0001 23.2091 25.0001 21C25.0001 18.7908 23.2092 17 21.0001 17C19.7627 17 18.6566 17.5618 17.9228 18.4443L10.9673 13.574C10.9888 13.3856 10.9999 13.1941 10.9999 13C10.9999 12.7892 10.9869 12.5814 10.9615 12.3774L17.8954 7.52228C18.6288 8.42396 19.7472 9 21.0001 9ZM5.9999 16C7.65675 16 8.9999 14.6568 8.9999 13C8.9999 11.3431 7.65675 9.99998 5.9999 9.99998C4.34305 9.99998 2.9999 11.3431 2.9999 13C2.9999 14.6568 4.34305 16 5.9999 16ZM23.0001 21C23.0001 22.1045 22.1047 23 21.0001 23C19.8955 23 19.0001 22.1045 19.0001 21C19.0001 19.8954 19.8955 19 21.0001 19C22.1047 19 23.0001 19.8954 23.0001 21Z" fill="#FFFFFF"></path><path d="M17.0557 5.66867L17.6293 6.48783L18.1467 6.12555L18.0419 5.50271L17.0557 5.66867ZM10.2797 10.4133L9.42435 10.9314L9.97794 11.8454L10.8533 11.2325L10.2797 10.4133ZM10.3019 15.5496L10.8755 14.7305L9.99253 14.1122L9.44211 15.039L10.3019 15.5496ZM17.0639 20.2844L18.048 20.4622L18.1617 19.8324L17.6375 19.4653L17.0639 20.2844ZM17.9228 18.4443L17.3493 19.2635L18.1033 19.7914L18.6918 19.0836L17.9228 18.4443ZM10.9673 13.574L9.97378 13.4604L9.90619 14.0518L10.3937 14.3931L10.9673 13.574ZM10.9615 12.3774L10.3879 11.5583L9.89498 11.9035L9.96915 12.5007L10.9615 12.3774ZM17.8954 7.52228L18.6712 6.89127L18.084 6.16943L17.3218 6.70313L17.8954 7.52228ZM22.0001 5C22.0001 5.55228 21.5524 6 21.0001 6V8C22.6569 8 24.0001 6.65685 24.0001 5H22.0001ZM21.0001 4C21.5524 4 22.0001 4.44772 22.0001 5H24.0001C24.0001 3.34315 22.6569 2 21.0001 2V4ZM20.0001 5C20.0001 4.44772 20.4478 4 21.0001 4V2C19.3432 2 18.0001 3.34315 18.0001 5H20.0001ZM21.0001 6C20.4478 6 20.0001 5.55228 20.0001 5H18.0001C18.0001 6.65685 19.3432 8 21.0001 8V6ZM24.0001 5C24.0001 6.65685 22.6569 8 21.0001 8V10C23.7615 10 26.0001 7.76142 26.0001 5H24.0001ZM21.0001 2C22.6569 2 24.0001 3.34315 24.0001 5H26.0001C26.0001 2.23858 23.7615 0 21.0001 0V2ZM18.0001 5C18.0001 3.34315 19.3432 2 21.0001 2V0C18.2387 0 16.0001 2.23858 16.0001 5H18.0001ZM18.0419 5.50271C18.0145 5.33989 18.0001 5.17201 18.0001 5H16.0001C16.0001 5.28368 16.0238 5.56258 16.0696 5.83464L18.0419 5.50271ZM10.8533 11.2325L17.6293 6.48783L16.4822 4.84952L9.70611 9.59416L10.8533 11.2325ZM5.9999 8.99998C7.45049 8.99998 8.72183 9.77151 9.42435 10.9314L11.135 9.89525C10.0852 8.16196 8.17872 6.99998 5.9999 6.99998V8.99998ZM1.9999 13C1.9999 10.7908 3.79076 8.99998 5.9999 8.99998V6.99998C2.68619 6.99998 -9.91821e-05 9.68627 -9.91821e-05 13H1.9999ZM5.9999 17C3.79076 17 1.9999 15.2091 1.9999 13H-9.91821e-05C-9.91821e-05 16.3137 2.68619 19 5.9999 19V17ZM9.44211 15.039C8.74346 16.2152 7.4628 17 5.9999 17V19C8.19728 19 10.1176 17.8182 11.1617 16.0603L9.44211 15.039ZM17.6375 19.4653L10.8755 14.7305L9.72832 16.3688L16.4903 21.1036L17.6375 19.4653ZM18.0001 21C18.0001 20.8156 18.0166 20.6359 18.048 20.4622L16.0798 20.1067C16.0274 20.3973 16.0001 20.6959 16.0001 21H18.0001ZM21.0001 24C19.3432 24 18.0001 22.6568 18.0001 21H16.0001C16.0001 23.7614 18.2387 26 21.0001 26V24ZM24.0001 21C24.0001 22.6568 22.6569 24 21.0001 24V26C23.7615 26 26.0001 23.7614 26.0001 21H24.0001ZM21.0001 18C22.6569 18 24.0001 19.3431 24.0001 21H26.0001C26.0001 18.2386 23.7615 16 21.0001 16V18ZM18.6918 19.0836C19.2437 18.4199 20.0724 18 21.0001 18V16C19.453 16 18.0695 16.7038 17.1539 17.805L18.6918 19.0836ZM10.3937 14.3931L17.3493 19.2635L18.4964 17.6252L11.5409 12.7548L10.3937 14.3931ZM9.9999 13C9.9999 13.1561 9.99101 13.3097 9.97378 13.4604L11.9608 13.6876C11.9867 13.4616 11.9999 13.2321 11.9999 13H9.9999ZM9.96915 12.5007C9.98941 12.6639 9.9999 12.8305 9.9999 13H11.9999C11.9999 12.7479 11.9843 12.4989 11.9539 12.2542L9.96915 12.5007ZM17.3218 6.70313L10.3879 11.5583L11.5351 13.1966L18.469 8.34144L17.3218 6.70313ZM21.0001 8C20.0608 8 19.2229 7.56952 18.6712 6.89127L17.1196 8.1533C18.0348 9.27841 19.4336 10 21.0001 10V8ZM7.9999 13C7.9999 14.1045 7.10447 15 5.9999 15V17C8.20904 17 9.9999 15.2091 9.9999 13H7.9999ZM5.9999 11C7.10447 11 7.9999 11.8954 7.9999 13H9.9999C9.9999 10.7908 8.20904 8.99998 5.9999 8.99998V11ZM3.9999 13C3.9999 11.8954 4.89533 11 5.9999 11V8.99998C3.79076 8.99998 1.9999 10.7908 1.9999 13H3.9999ZM5.9999 15C4.89533 15 3.9999 14.1045 3.9999 13H1.9999C1.9999 15.2091 3.79076 17 5.9999 17V15ZM21.0001 24C22.6569 24 24.0001 22.6568 24.0001 21H22.0001C22.0001 21.5523 21.5524 22 21.0001 22V24ZM18.0001 21C18.0001 22.6568 19.3432 24 21.0001 24V22C20.4478 22 20.0001 21.5523 20.0001 21H18.0001ZM21.0001 18C19.3432 18 18.0001 19.3431 18.0001 21H20.0001C20.0001 20.4477 20.4478 20 21.0001 20V18ZM24.0001 21C24.0001 19.3431 22.6569 18 21.0001 18V20C21.5524 20 22.0001 20.4477 22.0001 21H24.0001Z" fill="black" fill-opacity="0.2" mask="url(#path-1-outside-1_1682_5275)"></path></svg></span></span></button></div><div class="ControlsTooltipContainerstyles__StaticTooltipContainer-sc-116izd2-0 cKsQZi"><button role="" aria-label="Full screen" tabindex="0" type="button" class="IconButtonStyles__IconButton-sc-1w5hdle-1 jRKVYy"><span aria-hidden="true" class="IconButtonStyles__IconButtonContent-sc-1w5hdle-0 cOCCIp"><span class="ControllerBarStyles__Icon-sc-nq42hz-9 kEAfiT"><svg width="100%" height="100%" fill="#FFFFFF" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0)" fill="#fff"><path d="M0 1.366a1 1 0 011-1h6a1 1 0 010 2H2v5a1 1 0 11-2 0v-6zM23 .366a1 1 0 011 1v6a1 1 0 11-2 0v-5h-5a1 1 0 110-2h6zM22 17.366a1 1 0 112 0v6a1 1 0 01-1 1h-6a1 1 0 110-2h5v-5zM0 17.366a1 1 0 112 0v5h5a1 1 0 110 2H1a1 1 0 01-1-1v-6z"></path></g><defs><clipPath id="clip0"><path fill="#fff" transform="translate(0 .366)" d="M0 0h24v24H0z"></path></clipPath></defs></svg></span></span></button></div></div></div></div></nav><div class="Player__StyledPlayer-sc-1k1z8es-0 kXWidu"><div><div><div style="margin-left: env(safe-area-inset-left);" class="NavigationContainerstyles__NavigationContainer-sc-17uvxnw-0 gdGNCc"><button role="" aria-label="Previous page" tabindex="0" type="button" id="btn-previous" class="IconButtonStyles__IconButton-sc-1w5hdle-1 jRKVYy"><span aria-hidden="true" class="IconButtonStyles__IconButtonContent-sc-1w5hdle-0 bSDJUV"><svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><path fill="#FFFFFF" fill-rule="evenodd" clip-rule="evenodd" d="M31.3138 39.4453C30.5737 40.1853 29.374 40.1852 28.634 39.4452L12.7973 23.6076C11.9093 22.7196 11.9094 21.2799 12.7973 20.3919L28.634 4.55524C29.374 3.81524 30.5738 3.81524 31.3138 4.55524C32.0538 5.29524 32.0538 6.49502 31.3138 7.23501L16.549 21.9998L31.3138 36.7655C32.0538 37.5055 32.0538 38.7053 31.3138 39.4453Z"></path><path fill="#000000" fill-rule="evenodd" clip-rule="evenodd" d="M32.7279 40.8595C31.2068 42.3805 28.7407 42.3805 27.2197 40.8594L11.383 25.0218C9.71408 23.3527 9.71412 20.6467 11.3831 18.9777L27.2198 3.14103C28.7409 1.61998 31.207 1.61998 32.728 3.14103L31.3138 4.55524C30.5738 3.81524 29.374 3.81524 28.634 4.55524L12.7973 20.3919C11.9094 21.2799 11.9093 22.7196 12.7973 23.6076L28.634 39.4452C29.374 40.1852 30.5737 40.1853 31.3138 39.4453C32.0538 38.7053 32.0538 37.5055 31.3138 36.7655L16.549 21.9998L31.3138 7.23501C32.0538 6.49502 32.0538 5.29524 31.3138 4.55524L32.728 3.14103C34.2491 4.66208 34.2491 7.12818 32.728 8.64923L19.3774 21.9999L32.7281 35.3513C34.2491 36.8724 34.249 39.3385 32.7279 40.8595Z" fill-opacity="0.2"></path></svg></span></button></div><div class="Stagestyles__StageManagerContainer-sc-llx6uf-0 BhsmR"><div class="ZoomContainerstyles__ZoomContainer-sc-14kkq52-0 kKYjGP" style="left: 563.28px; top: 75.89px; width: 409.446px; height: 579.21px; transform-origin: 0px 0px 0px; transform: translate(0px);"><div class="Stagestyles__StageWrapper-sc-llx6uf-1 fRSdSb"><div class="Stagestyles__StagePagesContainer-sc-llx6uf-2 eezNej"><div id="effect-container" class="EffectFlipstyles__FlipEffectContainer-sc-kylv8a-5 lkZtuq"><div class="EffectFlipstyles__FlipContainer-sc-kylv8a-3 hfwvfn"><div id="id-0" data-pages="1" class="EffectFlipstyles__StageDiv-sc-kylv8a-1 gxnUmV"><div class="EffectFlipstyles__StageLayer-sc-kylv8a-0 jxlEhU"><div class="EffectFlipstyles__PageContainer-sc-kylv8a-4 iGnBpL"><div class="StageListItemstyles__StageListItemContainer-sc-19csvl2-0 jVbrtu"><div class="StagePagesstyles__StagePagesDiv-sc-strpxr-0 jUtLhu"><div class="PageBackground__BackgroundContainer-sc-17hm0la-2 dGjYlx"><img width="409px" height="579px" src="a_data/original.jpg" class="PageBackground__PageImg-sc-17hm0la-1 jUukbD"></div></div><div class="StagePagesPreloaderstyles__StagePagesPreloader-sc-eioowp-0 fzOQkQ"></div></div><div data-id="gradient" class="EffectFlipstyles__PageGradient-sc-kylv8a-7 bHUiru"></div></div></div></div><div id="id-1" data-pages="1" class="EffectFlipstyles__StageDiv-sc-kylv8a-1 jwOrqK"><div class="EffectFlipstyles__StageLayer-sc-kylv8a-0 daRksU"><div class="EffectFlipstyles__PageContainer-sc-kylv8a-4 iGnBpL"><div class="StageListItemstyles__StageListItemContainer-sc-19csvl2-0 jVbrtu"><div class="StagePagesstyles__StagePagesDiv-sc-strpxr-0 jUtLhu"><div class="PageBackground__BackgroundContainer-sc-17hm0la-2 dGjYlx"><img width="409px" height="579px" src="a_data/original_002.jpg" class="PageBackground__PageImg-sc-17hm0la-1 jUukbD"></div></div><div class="StagePagesPreloaderstyles__StagePagesPreloader-sc-eioowp-0 fzOQkQ"></div></div><div data-id="gradient" class="EffectFlipstyles__PageGradient-sc-kylv8a-7 bHUiru"></div></div></div></div></div><div id="aux-stage-layer" class="EffectFlipstyles__NextStageLayer-sc-kylv8a-2 bgfeqU"></div></div></div></div></div></div><div id="playerPopover" class="Player__StyledPopoverPortal-sc-1k1z8es-1 cXrLgK"></div><div id="playerTooltip"></div></div></div></div></main><div id="regularPlayerModal"></div></div><div id="passwordPlayerModal"></div></div></div></div></div></div>
+        
+        <script defer="defer" src="a_data/reader.gz.js"></script>
+        <script defer="defer" src="a_data/handleUnsupportedBrowsers.gz.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var playerWidth = 0;
+                var playerHeight = 0;
+                var playerLoader = document.getElementById('loader-container');
+
+                if (playerLoader) {
+                    playerLoader.remove();
+                }
+
+                setInterval(function() {
+                    var width = window.innerWidth;
+                    var height = window.innerHeight;
+
+                    if (playerWidth !== width || playerHeight !== height) {
+                        playerWidth = width;
+                        playerHeight = height;
+                        document.documentElement.style.setProperty('--player-width', `${playerWidth}px`);
+                        document.documentElement.style.setProperty('--player-height', `${playerHeight}px`);
+                        window.dispatchEvent(new Event('resize'));
+                    }
+                }, 300);
+            }, false);
+        </script>
+    
+
+<script src="app.js" type="text/javascript"></script></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
